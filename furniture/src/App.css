@@ -1,3 +1,11 @@
+:root {
+  --center: -15%;
+  --centerSides: 10%;
+  --sideTop: 20%;
+  --sideChairs: -35%;
+  --tableCenter: 39%;
+}
+
 .App {
   text-align: center;
 }
@@ -17,11 +25,13 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  min-width: 100vw;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: relative;
 }
 
 .App-link {
@@ -35,4 +45,50 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.chairs {
+  background: red;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.left-side {
+  background: white;
+  top: var(--sideTop);
+  left: var(--sideChairs);
+  z-index: 98;
+}
+
+.right-side {
+  background: white;
+  top: var(--sideTop);
+  right: var(--sideChairs);
+  z-index: 98;
+}
+
+.center {
+  top: var(--center);
+}
+
+.left {
+  left: var(--centerSides);
+}
+
+.right {
+  right: var(--centerSides);
+}
+
+.tables {
+  background: black;
+  width: 325px;
+  height: 125px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: var(--tableCenter);
+  z-index: 99;
 }

@@ -18,5 +18,5 @@ app.get('/api/:furnitures/:models', (request, response) => {
   const { furnitures, models } = request.params;
   response
     .status(201)
-    .sendFile(__dirname + `/public/images/${furnitures}/${models}`);
+    .send(__dirname + `/public/images/${furnitures}/${models}`);
 });
