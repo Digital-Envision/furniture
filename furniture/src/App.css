@@ -4,21 +4,13 @@
   --sideTop: 20%;
   --sideChairs: -35%;
   --tableCenter: 39%;
+
+  --tableWidth: 325px;
+  --tableHeight: 125px;
 }
 
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -34,38 +26,23 @@
   position: relative;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .chairs {
-  background: red;
+  /* background: red; */
   width: 100px;
   height: 100px;
   position: absolute;
 }
 
 .left-side {
-  background: white;
+  /* background: white; */
   top: var(--sideTop);
   left: var(--sideChairs);
-  z-index: 98;
 }
 
 .right-side {
-  background: white;
+  /* background: white; */
   top: var(--sideTop);
   right: var(--sideChairs);
-  z-index: 98;
 }
 
 .center {
@@ -81,14 +58,24 @@
 }
 
 .tables {
-  background: black;
-  width: 325px;
-  height: 125px;
+  /* background: white; */
+  width: calc(var(--tableWidth) * 4);
+  height: calc(var(--tableHeight) * 1.5);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.holder {
+  /* background: black; */
+  width: var(--tableWidth);
+  height: var(--tableHeight);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   position: relative;
   top: var(--tableCenter);
-  z-index: 99;
 }

@@ -1,15 +1,10 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const fs = require('fs');
-const path = require('path');
-const { readDir } = require('./Utility/directoryReader');
+const { readDir, imageSender } = require('./Utility/directoryReader');
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-app.use(bodyParser({ limit: '50mb' }));
-app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.listen(PORT, () => {
@@ -31,19 +26,6 @@ app.get('/images/:furnitures/:models/:file', (request, response) => {
   response.status(200).sendFile(dirPath);
 });
 
-app.get('/api/backgrounds', (request, response) => {
-  const dirPath = __dirname + `/public/images/Backgrounds`;
-
-  fs.readdir(dirPath, (err, files) => {
-    if (err) {
-      response.status(200).send({ data: [] });
-      return;
-    }
-
-    files.forEach((names) => {
-      file.push(path.join(`images/Backgrounds`, names));
-    });
-
-    response.status(200).send({ data: file });
-  });
+app.get('/api/backgrounds', (_, response) => {
+  imageSender(response);
 });

@@ -9,14 +9,13 @@ function App() {
   const [allDining, setAllDining] = useState([]);
 
   const [currentChair, setCurrentChair] = useState({});
+  const [currentTable, setCurrentTable] = useState({});
 
   const GetData = async () => {
     const backgroundsAPI = await fetch('/api/Backgrounds');
     const backgroundsPayload = await backgroundsAPI.json();
 
     setBackgrounds(backgroundsPayload.data);
-
-    console.log(backgroundsPayload.data);
 
     const chairAPI = await fetch('/api/Chairs');
     const chairPayload = await chairAPI.json();
@@ -34,6 +33,8 @@ function App() {
     setAllDining(diningPayload.data);
 
     SetChair(chairPayload.data[0]);
+
+    SetDining(diningPayload.data[0]);
   };
 
   const SetChair = async (models) => {
@@ -41,23 +42,20 @@ function App() {
     const newChairPayload = await newChairAPI.json();
     const newChairData = newChairPayload.data;
 
-    setCurrentChair(CurrentChairObjects(newChairData));
-  };
-
-  const CurrentChairObjects = (newChairData) => {
-    return {
-      Base: newChairData[0],
-      Center: newChairData[1],
-      Left: newChairData[2],
-      Right: newChairData[3],
-    };
+    setCurrentChair(newChairData);
   };
 
   const SelectChair = () => {};
 
   const SelectDining = () => {};
 
-  const SetDining = () => {};
+  const SetDining = async (models) => {
+    const newTableAPI = await fetch(`/api/DiningTables/${models}`);
+    const newTablePayload = await newTableAPI.json();
+    const newTableData = newTablePayload.data;
+
+    setCurrentTable(newTableData['Base']);
+  };
 
   const SelectCoffee = () => {};
 
@@ -75,7 +73,7 @@ function App() {
           allCoffee={allCoffee}
           allDining={allDining}
         />
-        <div className="tables">
+        <div className="holder">
           <div className="chairs left-side">
             <img
               src={currentChair['Left']}
@@ -107,6 +105,9 @@ function App() {
               width="100px"
               height="100px"
             />
+          </div>
+          <div className="tables">
+            <img src={currentTable} alt="" height="100%" width="100%" />
           </div>
         </div>
       </header>
