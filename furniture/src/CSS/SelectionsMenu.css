@@ -1,0 +1,12 @@
+.Selections-Buttons {
+  display: flex;
+  margin-bottom: 125px;
+  z-index: 20;
+}
+
+.Selections-Buttons Button {
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 175px;
+}

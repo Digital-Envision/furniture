@@ -1,40 +1,37 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import SelectionsMenu from './Component/SelectionsMenu';
+import {
+  GetAllBackgrounds,
+  GetAllChairs,
+  GetAllCoffee,
+  GetAllDining,
+} from './Utility/FileRetriever';
 
-function App() {
-  const [backgrounds, setBackgrounds] = useState({});
+const App = () => {
+  const [backgrounds, setBackgrounds] = useState([]);
   const [allChair, setAllChair] = useState([]);
   const [allCoffee, setAllCoffee] = useState([]);
   const [allDining, setAllDining] = useState([]);
 
-  const [currentChair, setCurrentChair] = useState({});
-  const [currentTable, setCurrentTable] = useState({});
+  const [currentChair, setCurrentChair] = useState('');
+  const [currentTable, setCurrentTable] = useState('');
+  const [currentBackground, setCurrentBackground] = useState('');
+
+  const GetAllData = useRef(() => {});
 
   const GetData = async () => {
-    const backgroundsAPI = await fetch('/api/Backgrounds');
-    const backgroundsPayload = await backgroundsAPI.json();
+    GetAllBackgrounds(setBackgrounds, setCurrentBackground);
 
-    setBackgrounds(backgroundsPayload.data);
+    const chairs = await GetAllChairs(setAllChair);
 
-    const chairAPI = await fetch('/api/Chairs');
-    const chairPayload = await chairAPI.json();
+    GetAllCoffee(setAllCoffee);
 
-    setAllChair(chairPayload.data);
+    const dinings = await GetAllDining(setAllDining);
 
-    const coffeeAPI = await fetch('/api/CoffeTables');
-    const coffeePayload = await coffeeAPI.json();
+    SetChair(chairs);
 
-    setAllCoffee(coffeePayload.data);
-
-    const diningAPI = await fetch('/api/DiningTables');
-    const diningPayload = await diningAPI.json();
-
-    setAllDining(diningPayload.data);
-
-    SetChair(chairPayload.data[0]);
-
-    SetDining(diningPayload.data[0]);
+    SetTable(dinings, 'DiningTables');
   };
 
   const SetChair = async (models) => {
@@ -45,24 +42,18 @@ function App() {
     setCurrentChair(newChairData);
   };
 
-  const SelectChair = () => {};
-
-  const SelectDining = () => {};
-
-  const SetDining = async (models) => {
-    const newTableAPI = await fetch(`/api/DiningTables/${models}`);
+  const SetTable = async (models, mode) => {
+    const newTableAPI = await fetch(`/api/${mode}/${models}`);
     const newTablePayload = await newTableAPI.json();
     const newTableData = newTablePayload.data;
 
     setCurrentTable(newTableData['Base']);
   };
 
-  const SelectCoffee = () => {};
-
-  const SetCoffee = () => {};
+  GetAllData.current = GetData;
 
   useEffect(() => {
-    GetData();
+    GetAllData.current();
   }, []);
 
   return (
@@ -72,7 +63,14 @@ function App() {
           allChair={allChair}
           allCoffee={allCoffee}
           allDining={allDining}
+          setCurrentChair={setCurrentChair}
+          setCurrentTable={setCurrentTable}
+          SetChair={SetChair}
+          SetTable={SetTable}
         />
+        <div className="Backgrounds">
+          <img src={currentBackground} alt="" width="650px" height="400px" />
+        </div>
         <div className="holder">
           <div className="chairs left-side">
             <img
@@ -113,6 +111,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
