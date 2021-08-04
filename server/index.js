@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
+const { readDir } = require('./Utility/directoryReader');
 
 const PORT = process.env.PORT || 3001;
 
@@ -16,38 +17,11 @@ app.listen(PORT, () => {
 });
 
 app.get('/api/:furnitures', (request, response) => {
-  const { furnitures } = request.params;
-
-  const dirPath = __dirname + `/public/images/${furnitures}`;
-
-  fs.readdir(dirPath, (err, models) => {
-    if (err) {
-      response.status(200).send({ data: [] });
-      return;
-    }
-
-    response.status(200).send({ data: models });
-  });
+  readDir(request.params, response, true);
 });
 
 app.get('/api/:furnitures/:models', (request, response) => {
-  const { furnitures, models } = request.params;
-
-  const dirPath = __dirname + `/public/images/${furnitures}/${models}`;
-  const file = [];
-
-  fs.readdir(dirPath, (err, files) => {
-    if (err) {
-      response.status(404).send('Not Found!');
-      return;
-    }
-
-    files.forEach((names) => {
-      file.push(path.join(`images/${furnitures}/${models}`, names));
-    });
-
-    response.status(200).send({ data: file });
-  });
+  readDir(request.params, response, false);
 });
 
 app.get('/images/:furnitures/:models/:file', (request, response) => {
