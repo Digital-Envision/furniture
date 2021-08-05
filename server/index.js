@@ -22,6 +22,7 @@ app.get('/api/:furnitures/:models', (request, response) => {
 app.get('/images/:furnitures/:models/:file', (request, response) => {
   const { furnitures, models, file } = request.params;
   const dirPath = __dirname + `/public/images/${furnitures}/${models}/${file}`;
+  console.log(dirPath);
 
   response.status(200).sendFile(dirPath);
 });

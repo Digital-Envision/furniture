@@ -18,12 +18,16 @@
   min-height: 100vh;
   display: flex;
   min-width: 100vw;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
   position: relative;
+}
+
+.Backgrounds {
+  position: absolute;
 }
 
 .chairs {

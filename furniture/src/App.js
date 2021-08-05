@@ -1,82 +1,98 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import SelectionsMenu from './Component/SelectionsMenu';
+import {
+  GetAllBackgrounds,
+  GetAllChairs,
+  GetAllCoffee,
+  GetAllDining,
+} from './Utility/FileRetriever';
+import { ModalProvider } from './Component/ModalContext';
 
-function App() {
-  const [backgrounds, setBackgrounds] = useState({});
+const App = () => {
+  const [backgrounds, setBackgrounds] = useState([]);
   const [allChair, setAllChair] = useState([]);
   const [allCoffee, setAllCoffee] = useState([]);
   const [allDining, setAllDining] = useState([]);
 
-  const [currentChair, setCurrentChair] = useState({});
-  const [currentTable, setCurrentTable] = useState({});
+  const [currentChair, setCurrentChair] = useState('');
+  const [currentTable, setCurrentTable] = useState('');
+  const [currentBackground, setCurrentBackground] = useState('');
+
+  const GetAllData = useRef(() => {});
+
+  const publicImages = process.env.PUBLIC_URL + '/Images/';
 
   const GetData = async () => {
-    const backgroundsAPI = await fetch('/api/Backgrounds');
-    const backgroundsPayload = await backgroundsAPI.json();
+    const backdrops = await GetAllBackgrounds(
+      setBackgrounds,
+      setCurrentBackground
+    );
 
-    setBackgrounds(backgroundsPayload.data);
+    const chairs = await GetAllChairs(setAllChair);
 
-    const chairAPI = await fetch('/api/Chairs');
-    const chairPayload = await chairAPI.json();
+    GetAllCoffee(setAllCoffee);
 
-    setAllChair(chairPayload.data);
+    const dinings = await GetAllDining(setAllDining);
 
-    const coffeeAPI = await fetch('/api/CoffeTables');
-    const coffeePayload = await coffeeAPI.json();
+    SetChair(chairs);
 
-    setAllCoffee(coffeePayload.data);
+    SetTable(dinings, 'Dining');
 
-    const diningAPI = await fetch('/api/DiningTables');
-    const diningPayload = await diningAPI.json();
-
-    setAllDining(diningPayload.data);
-
-    SetChair(chairPayload.data[0]);
-
-    SetDining(diningPayload.data[0]);
+    setCurrentBackground(backdrops);
   };
 
   const SetChair = async (models) => {
-    const newChairAPI = await fetch(`/api/Chairs/${models}`);
-    const newChairPayload = await newChairAPI.json();
-    const newChairData = newChairPayload.data;
-
-    setCurrentChair(newChairData);
+    if (models !== undefined) setCurrentChair(models);
   };
 
-  const SelectChair = () => {};
+  const SetTable = async (models, mode) => {
+    setCurrentTable(models);
 
-  const SelectDining = () => {};
-
-  const SetDining = async (models) => {
-    const newTableAPI = await fetch(`/api/DiningTables/${models}`);
-    const newTablePayload = await newTableAPI.json();
-    const newTableData = newTablePayload.data;
-
-    setCurrentTable(newTableData['Base']);
+    switch (mode) {
+      case 'Coffee':
+        setCurrentBackground(backgrounds[0]);
+        break;
+      case 'Dining':
+        setCurrentBackground(backgrounds[1]);
+        break;
+      default:
+        break;
+    }
   };
 
-  const SelectCoffee = () => {};
-
-  const SetCoffee = () => {};
+  GetAllData.current = GetData;
 
   useEffect(() => {
-    GetData();
+    GetAllData.current();
   }, []);
 
   return (
     <div className="App">
       <header className="App-header">
-        <SelectionsMenu
-          allChair={allChair}
-          allCoffee={allCoffee}
-          allDining={allDining}
-        />
+        <ModalProvider>
+          <SelectionsMenu
+            allChair={allChair}
+            allCoffee={allCoffee}
+            allDining={allDining}
+            setCurrentChair={setCurrentChair}
+            setCurrentTable={setCurrentTable}
+            SetChair={SetChair}
+            SetTable={SetTable}
+          />
+        </ModalProvider>
+        <div className="Backgrounds">
+          <img
+            src={publicImages + currentBackground}
+            alt=""
+            width="650px"
+            height="400px"
+          />
+        </div>
         <div className="holder">
           <div className="chairs left-side">
             <img
-              src={currentChair['Left']}
+              src={publicImages + currentChair['Left']}
               alt=""
               width="100px"
               height="100px"
@@ -84,7 +100,7 @@ function App() {
           </div>
           <div className="chairs center left">
             <img
-              src={currentChair['Center']}
+              src={publicImages + currentChair['Center']}
               alt=""
               width="100px"
               height="100px"
@@ -92,7 +108,7 @@ function App() {
           </div>
           <div className="chairs center right">
             <img
-              src={currentChair['Center']}
+              src={publicImages + currentChair['Center']}
               alt=""
               width="100px"
               height="100px"
@@ -100,19 +116,24 @@ function App() {
           </div>
           <div className="chairs right-side">
             <img
-              src={currentChair['Right']}
+              src={publicImages + currentChair['Right']}
               alt=""
               width="100px"
               height="100px"
             />
           </div>
           <div className="tables">
-            <img src={currentTable} alt="" height="100%" width="100%" />
+            <img
+              src={publicImages + currentTable}
+              alt=""
+              height="100%"
+              width="100%"
+            />
           </div>
         </div>
       </header>
     </div>
   );
-}
+};
 
 export default App;
