@@ -1,18 +1,21 @@
 import { Button, Modal } from 'react-bootstrap';
 import React from 'react';
+import { useModal } from './ModalContext';
 
 const VerticalModal = (props) => {
   const ShorterNames = (name) => {
     return name.length > 15 ? name.substring(0, 11) + '...' : name;
   };
 
+  const { SetChairFunc, SetTableFunc, currentMode } = useModal();
+
   const SetTable = (models, mode) => {
-    props.SetTable(models, mode);
+    SetTableFunc.current(models, mode);
     props.onHide();
   };
 
   const SetChair = (models) => {
-    props.SetChair(models);
+    SetChairFunc.current(models);
     props.onHide();
   };
 
@@ -23,31 +26,30 @@ const VerticalModal = (props) => {
       case 'Chairs':
         const allChair = props.allChair;
         toReturn = allChair.map((obj) => (
-          <>
-            <Button
-              onClick={() => {
-                SetChair(obj);
-              }}
-            >
-              {ShorterNames(obj['name'])}
-            </Button>
-          </>
+          <Button
+            onClick={() => {
+              SetChair(obj);
+            }}
+            key={obj['name']}
+          >
+            {ShorterNames(obj['name'])}
+          </Button>
         ));
         break;
       case 'CoffeeTables':
         const allCoffee = props.allCoffee;
         toReturn = allCoffee.map((obj) => (
-          <>
-            <Button onClick={() => SetTable(obj)}>{ShorterNames(obj)}</Button>
-          </>
+          <Button onClick={() => SetTable(obj, 'Coffee')} key={obj}>
+            {ShorterNames(obj)}
+          </Button>
         ));
         break;
       case 'DiningTables':
         const allDining = props.allDining;
         toReturn = allDining.map((obj) => (
-          <>
-            <Button onClick={() => SetTable(obj)}>{ShorterNames(obj)}</Button>
-          </>
+          <Button onClick={() => SetTable(obj, 'Dining')} key={obj}>
+            {ShorterNames(obj)}
+          </Button>
         ));
         break;
       default:
@@ -72,7 +74,7 @@ const VerticalModal = (props) => {
       <Modal.Body>
         <h4>Please {props.header.toLowerCase()}</h4>
         {props.onHide}
-        {!props.hide && SelectableObjects(props.currentMode)}
+        {!props.hide && SelectableObjects(currentMode)}
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>

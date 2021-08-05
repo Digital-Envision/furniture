@@ -7,6 +7,7 @@ import {
   GetAllCoffee,
   GetAllDining,
 } from './Utility/FileRetriever';
+import { ModalProvider } from './Component/ModalContext';
 
 const App = () => {
   const [backgrounds, setBackgrounds] = useState([]);
@@ -23,7 +24,10 @@ const App = () => {
   const publicImages = process.env.PUBLIC_URL + '/Images/';
 
   const GetData = async () => {
-    GetAllBackgrounds(setBackgrounds, setCurrentBackground);
+    const backdrops = await GetAllBackgrounds(
+      setBackgrounds,
+      setCurrentBackground
+    );
 
     const chairs = await GetAllChairs(setAllChair);
 
@@ -33,15 +37,28 @@ const App = () => {
 
     SetChair(chairs);
 
-    SetTable(dinings);
+    SetTable(dinings, 'Dining');
+
+    setCurrentBackground(backdrops);
   };
 
   const SetChair = async (models) => {
     if (models !== undefined) setCurrentChair(models);
   };
 
-  const SetTable = async (models) => {
+  const SetTable = async (models, mode) => {
     setCurrentTable(models);
+
+    switch (mode) {
+      case 'Coffee':
+        setCurrentBackground(backgrounds[0]);
+        break;
+      case 'Dining':
+        setCurrentBackground(backgrounds[1]);
+        break;
+      default:
+        break;
+    }
   };
 
   GetAllData.current = GetData;
@@ -53,15 +70,17 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <SelectionsMenu
-          allChair={allChair}
-          allCoffee={allCoffee}
-          allDining={allDining}
-          setCurrentChair={setCurrentChair}
-          setCurrentTable={setCurrentTable}
-          SetChair={SetChair}
-          SetTable={SetTable}
-        />
+        <ModalProvider>
+          <SelectionsMenu
+            allChair={allChair}
+            allCoffee={allCoffee}
+            allDining={allDining}
+            setCurrentChair={setCurrentChair}
+            setCurrentTable={setCurrentTable}
+            SetChair={SetChair}
+            SetTable={SetTable}
+          />
+        </ModalProvider>
         <div className="Backgrounds">
           <img
             src={publicImages + currentBackground}

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import VerticalModal from './VerticalModal';
 import '../CSS/SelectionsMenu.css';
+import { useModal } from './ModalContext';
 
-function SelectionsMenu({
+const SelectionsMenu = ({
   allChair,
   allCoffee,
   allDining,
@@ -11,16 +12,22 @@ function SelectionsMenu({
   setCurrentTable,
   SetChair,
   SetTable,
-}) {
+}) => {
   const [show, setShow] = useState(false);
   const [modalHeader, setModalHeader] = useState('');
-  const [currentMode, setCurrentMode] = useState('');
+
+  const { SetChairFunc, SetTableFunc, setCurrentMode } = useModal();
 
   const ModalHandler = (header, mode) => {
     setModalHeader(header);
     setCurrentMode(mode);
     setShow(true);
   };
+
+  useEffect(() => {
+    SetChairFunc.current = SetChair;
+    SetTableFunc.current = SetTable;
+  }, []);
 
   return (
     <>
@@ -39,6 +46,7 @@ function SelectionsMenu({
           Select a Dining Table
         </Button>
       </div>
+
       <VerticalModal
         show={show}
         onHide={() => setShow(false)}
@@ -46,14 +54,9 @@ function SelectionsMenu({
         allChair={allChair}
         allCoffee={allCoffee}
         allDining={allDining}
-        setCurrentTable={setCurrentTable}
-        setCurrentChair={setCurrentChair}
-        currentMode={currentMode}
-        SetChair={SetChair}
-        SetTable={SetTable}
       />
     </>
   );
-}
+};
 
 export default SelectionsMenu;

@@ -10,7 +10,10 @@ const GetAllBackgrounds = async (setBackgrounds, setCurrentBackground) => {
     .filter((c) => c != null);
 
   setBackgrounds(backgroundData);
-  SetBackground(backgroundData[0], setCurrentBackground);
+
+  //Set Current Backgrounds base on Dining Tables
+
+  return backgroundData[1];
 };
 
 const GetAllChairs = async (setAllChair) => {
@@ -65,14 +68,4 @@ const GetAllDining = async (setAllDining) => {
   return diningData[0];
 };
 
-const SetBackground = (models, setCurrentBackground) => {
-  setCurrentBackground(models);
-};
-
-export {
-  GetAllBackgrounds,
-  GetAllChairs,
-  GetAllCoffee,
-  GetAllDining,
-  SetBackground,
-};
+export { GetAllBackgrounds, GetAllChairs, GetAllCoffee, GetAllDining };
