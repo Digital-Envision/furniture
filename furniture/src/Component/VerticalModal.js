@@ -29,7 +29,7 @@ const VerticalModal = (props) => {
                 SetChair(obj);
               }}
             >
-              {ShorterNames(obj)}
+              {ShorterNames(obj['name'])}
             </Button>
           </>
         ));
@@ -38,9 +38,7 @@ const VerticalModal = (props) => {
         const allCoffee = props.allCoffee;
         toReturn = allCoffee.map((obj) => (
           <>
-            <Button onClick={() => SetTable(obj, 'CoffeeTables')}>
-              {ShorterNames(obj)}
-            </Button>
+            <Button onClick={() => SetTable(obj)}>{ShorterNames(obj)}</Button>
           </>
         ));
         break;
@@ -48,9 +46,7 @@ const VerticalModal = (props) => {
         const allDining = props.allDining;
         toReturn = allDining.map((obj) => (
           <>
-            <Button onClick={() => SetTable(obj, 'DiningTables')}>
-              {ShorterNames(obj)}
-            </Button>
+            <Button onClick={() => SetTable(obj)}>{ShorterNames(obj)}</Button>
           </>
         ));
         break;

@@ -7,6 +7,8 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^5.0.2",
+    "directory-tree": "^2.2.9",
+    "dree": "^2.8.3",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.4",
     "react-dom": "^17.0.2",
@@ -14,8 +16,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "node ./src/Utility/JsonImageGen.js Images && react-scripts start",
+    "build": "node ./src/Utility/JsonImageGen.js Images && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

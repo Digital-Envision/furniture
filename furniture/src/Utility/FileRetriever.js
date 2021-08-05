@@ -1,43 +1,72 @@
+import TreeObj from './Tree.json';
+
 const GetAllBackgrounds = async (setBackgrounds, setCurrentBackground) => {
-  const backgroundsAPI = await fetch('/api/Backgrounds');
-  const backgroundsPayload = await backgroundsAPI.json();
+  const backgroundData = TreeObj['children'][0]['children']
+    .map((c) => {
+      if (c['children']) return c['children'][0]['relativePath'];
 
-  setBackgrounds(backgroundsPayload.data);
+      return null;
+    })
+    .filter((c) => c != null);
 
-  SetBackground(backgroundsPayload.data[1], setCurrentBackground);
+  setBackgrounds(backgroundData);
+  SetBackground(backgroundData[0], setCurrentBackground);
 };
 
 const GetAllChairs = async (setAllChair) => {
-  const chairAPI = await fetch('/api/Chairs');
-  const chairPayload = await chairAPI.json();
+  const chairData = TreeObj['children'][1]['children']
+    .map((c) => {
+      if (c['children']) {
+        return {
+          name: c['name'],
+          Base: c['children'][0]['relativePath'],
+          Center: c['children'][1]['relativePath'],
+          Left: c['children'][2]['relativePath'],
+          Right: c['children'][3]['relativePath'],
+        };
+      }
 
-  setAllChair(chairPayload.data);
+      return null;
+    })
+    .filter((c) => c != null);
 
-  return chairPayload.data[0];
+  setAllChair(chairData);
+
+  return chairData[0];
 };
 
 const GetAllCoffee = async (setAllCoffee) => {
-  const coffeeAPI = await fetch('/api/CoffeeTables');
-  const coffeePayload = await coffeeAPI.json();
+  const coffeeData = TreeObj['children'][2]['children']
+    .map((c) => {
+      if (c['children']) {
+        return c['children'][0]['relativePath'];
+      }
 
-  setAllCoffee(coffeePayload.data);
+      return null;
+    })
+    .filter((c) => c != null);
+
+  setAllCoffee(coffeeData);
 };
 
 const GetAllDining = async (setAllDining) => {
-  const diningAPI = await fetch('/api/DiningTables');
-  const diningPayload = await diningAPI.json();
+  const diningData = TreeObj['children'][3]['children']
+    .map((c) => {
+      if (c['children']) {
+        return c['children'][0]['relativePath'];
+      }
 
-  setAllDining(diningPayload.data);
+      return null;
+    })
+    .filter((c) => c != null);
 
-  return diningPayload.data[0];
+  setAllDining(diningData);
+
+  return diningData[0];
 };
 
-const SetBackground = async (models, setCurrentBackground) => {
-  const newBackgroundAPI = await fetch(`/api/Backgrounds/${models}`);
-  const newBackgroundPayload = await newBackgroundAPI.json();
-  const newBackgroundData = newBackgroundPayload.data;
-
-  setCurrentBackground(newBackgroundData['Base']);
+const SetBackground = (models, setCurrentBackground) => {
+  setCurrentBackground(models);
 };
 
 export {

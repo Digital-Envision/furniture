@@ -20,6 +20,8 @@ const App = () => {
 
   const GetAllData = useRef(() => {});
 
+  const publicImages = process.env.PUBLIC_URL + '/Images/';
+
   const GetData = async () => {
     GetAllBackgrounds(setBackgrounds, setCurrentBackground);
 
@@ -31,23 +33,15 @@ const App = () => {
 
     SetChair(chairs);
 
-    SetTable(dinings, 'DiningTables');
+    SetTable(dinings);
   };
 
   const SetChair = async (models) => {
-    const newChairAPI = await fetch(`/api/Chairs/${models}`);
-    const newChairPayload = await newChairAPI.json();
-    const newChairData = newChairPayload.data;
-
-    setCurrentChair(newChairData);
+    if (models !== undefined) setCurrentChair(models);
   };
 
-  const SetTable = async (models, mode) => {
-    const newTableAPI = await fetch(`/api/${mode}/${models}`);
-    const newTablePayload = await newTableAPI.json();
-    const newTableData = newTablePayload.data;
-
-    setCurrentTable(newTableData['Base']);
+  const SetTable = async (models) => {
+    setCurrentTable(models);
   };
 
   GetAllData.current = GetData;
@@ -69,12 +63,17 @@ const App = () => {
           SetTable={SetTable}
         />
         <div className="Backgrounds">
-          <img src={currentBackground} alt="" width="650px" height="400px" />
+          <img
+            src={publicImages + currentBackground}
+            alt=""
+            width="650px"
+            height="400px"
+          />
         </div>
         <div className="holder">
           <div className="chairs left-side">
             <img
-              src={currentChair['Left']}
+              src={publicImages + currentChair['Left']}
               alt=""
               width="100px"
               height="100px"
@@ -82,7 +81,7 @@ const App = () => {
           </div>
           <div className="chairs center left">
             <img
-              src={currentChair['Center']}
+              src={publicImages + currentChair['Center']}
               alt=""
               width="100px"
               height="100px"
@@ -90,7 +89,7 @@ const App = () => {
           </div>
           <div className="chairs center right">
             <img
-              src={currentChair['Center']}
+              src={publicImages + currentChair['Center']}
               alt=""
               width="100px"
               height="100px"
@@ -98,14 +97,19 @@ const App = () => {
           </div>
           <div className="chairs right-side">
             <img
-              src={currentChair['Right']}
+              src={publicImages + currentChair['Right']}
               alt=""
               width="100px"
               height="100px"
             />
           </div>
           <div className="tables">
-            <img src={currentTable} alt="" height="100%" width="100%" />
+            <img
+              src={publicImages + currentTable}
+              alt=""
+              height="100%"
+              width="100%"
+            />
           </div>
         </div>
       </header>

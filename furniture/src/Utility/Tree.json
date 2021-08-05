@@ -1,0 +1,260 @@
+{
+	"name": "Images",
+	"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images",
+	"relativePath": ".",
+	"type": "directory",
+	"isSymbolicLink": false,
+	"sizeInBytes": 2747776,
+	"size": "2.75 MB",
+	"hash": "7fe95f24d16978ff89491249da0748bd",
+	"children": [{
+		"name": "Backgrounds",
+		"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\Backgrounds",
+		"relativePath": "Backgrounds",
+		"type": "directory",
+		"isSymbolicLink": false,
+		"sizeInBytes": 123874,
+		"size": "123.87 KB",
+		"hash": "43c45a96520a5c55c607c53976265672",
+		"children": [{
+			"name": "Coffee",
+			"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\Backgrounds\\Coffee",
+			"relativePath": "Backgrounds\\Coffee",
+			"type": "directory",
+			"isSymbolicLink": false,
+			"sizeInBytes": 0,
+			"size": "0 B",
+			"hash": "3c09b8d09553786b799e02306e55c7ba"
+		}, {
+			"name": "Dining",
+			"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\Backgrounds\\Dining",
+			"relativePath": "Backgrounds\\Dining",
+			"type": "directory",
+			"isSymbolicLink": false,
+			"sizeInBytes": 123874,
+			"size": "123.87 KB",
+			"hash": "e43ad9151a2dc76e9128aa583cf85056",
+			"children": [{
+				"name": "Bases.jpeg",
+				"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\Backgrounds\\Dining\\Bases.jpeg",
+				"relativePath": "Backgrounds\\Dining\\Bases.jpeg",
+				"type": "file",
+				"isSymbolicLink": false,
+				"extension": "jpeg",
+				"sizeInBytes": 123874,
+				"size": "123.87 KB",
+				"hash": "a5a5ae201d15d1063d28ae86469bb925"
+			}]
+		}]
+	}, {
+		"name": "Chairs",
+		"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\Chairs",
+		"relativePath": "Chairs",
+		"type": "directory",
+		"isSymbolicLink": false,
+		"sizeInBytes": 2065002,
+		"size": "2.07 MB",
+		"hash": "f1584d184ee20910ba96937cbc445164",
+		"children": [{
+			"name": "AN0071P Upholstered dining chair",
+			"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\Chairs\\AN0071P Upholstered dining chair",
+			"relativePath": "Chairs\\AN0071P Upholstered dining chair",
+			"type": "directory",
+			"isSymbolicLink": false,
+			"sizeInBytes": 1032501,
+			"size": "1.03 MB",
+			"hash": "80fc2b02f9221a027df62551f97e68f4",
+			"children": [{
+				"name": "Bases.jpeg",
+				"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\Chairs\\AN0071P Upholstered dining chair\\Bases.jpeg",
+				"relativePath": "Chairs\\AN0071P Upholstered dining chair\\Bases.jpeg",
+				"type": "file",
+				"isSymbolicLink": false,
+				"extension": "jpeg",
+				"sizeInBytes": 123874,
+				"size": "123.87 KB",
+				"hash": "a5a5ae201d15d1063d28ae86469bb925"
+			}, {
+				"name": "Center.png",
+				"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\Chairs\\AN0071P Upholstered dining chair\\Center.png",
+				"relativePath": "Chairs\\AN0071P Upholstered dining chair\\Center.png",
+				"type": "file",
+				"isSymbolicLink": false,
+				"extension": "png",
+				"sizeInBytes": 335078,
+				"size": "335.08 KB",
+				"hash": "0bcdaafcae67dec501c8a073f05595f4"
+			}, {
+				"name": "LeftSide.png",
+				"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\Chairs\\AN0071P Upholstered dining chair\\LeftSide.png",
+				"relativePath": "Chairs\\AN0071P Upholstered dining chair\\LeftSide.png",
+				"type": "file",
+				"isSymbolicLink": false,
+				"extension": "png",
+				"sizeInBytes": 221448,
+				"size": "221.45 KB",
+				"hash": "001dd7b3b77d1cc94050871764718ba8"
+			}, {
+				"name": "RightSide.png",
+				"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\Chairs\\AN0071P Upholstered dining chair\\RightSide.png",
+				"relativePath": "Chairs\\AN0071P Upholstered dining chair\\RightSide.png",
+				"type": "file",
+				"isSymbolicLink": false,
+				"extension": "png",
+				"sizeInBytes": 352101,
+				"size": "352.1 KB",
+				"hash": "38158f51baf4aea080055e422e32c179"
+			}]
+		}, {
+			"name": "Other Chairs",
+			"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\Chairs\\Other Chairs",
+			"relativePath": "Chairs\\Other Chairs",
+			"type": "directory",
+			"isSymbolicLink": false,
+			"sizeInBytes": 1032501,
+			"size": "1.03 MB",
+			"hash": "086dbe5061162cf23255fea5cc62384b",
+			"children": [{
+				"name": "Bases.jpeg",
+				"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\Chairs\\Other Chairs\\Bases.jpeg",
+				"relativePath": "Chairs\\Other Chairs\\Bases.jpeg",
+				"type": "file",
+				"isSymbolicLink": false,
+				"extension": "jpeg",
+				"sizeInBytes": 123874,
+				"size": "123.87 KB",
+				"hash": "a5a5ae201d15d1063d28ae86469bb925"
+			}, {
+				"name": "Center.png",
+				"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\Chairs\\Other Chairs\\Center.png",
+				"relativePath": "Chairs\\Other Chairs\\Center.png",
+				"type": "file",
+				"isSymbolicLink": false,
+				"extension": "png",
+				"sizeInBytes": 335078,
+				"size": "335.08 KB",
+				"hash": "0bcdaafcae67dec501c8a073f05595f4"
+			}, {
+				"name": "LeftSide.png",
+				"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\Chairs\\Other Chairs\\LeftSide.png",
+				"relativePath": "Chairs\\Other Chairs\\LeftSide.png",
+				"type": "file",
+				"isSymbolicLink": false,
+				"extension": "png",
+				"sizeInBytes": 352101,
+				"size": "352.1 KB",
+				"hash": "914ec0f6ef2b53eadd44ff9f384c05cb"
+			}, {
+				"name": "RightSide.png",
+				"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\Chairs\\Other Chairs\\RightSide.png",
+				"relativePath": "Chairs\\Other Chairs\\RightSide.png",
+				"type": "file",
+				"isSymbolicLink": false,
+				"extension": "png",
+				"sizeInBytes": 221448,
+				"size": "221.45 KB",
+				"hash": "078e9751cbab8c30ef190f4644a6554a"
+			}]
+		}]
+	}, {
+		"name": "CoffeeTables",
+		"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\CoffeeTables",
+		"relativePath": "CoffeeTables",
+		"type": "directory",
+		"isSymbolicLink": false,
+		"sizeInBytes": 100503,
+		"size": "100.5 KB",
+		"hash": "e8dde26cc8f7c038259e41fb9f8e2c5c",
+		"children": [{
+			"name": "AN0057P Light luxury minimalist italian sintered stone coffee table",
+			"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\CoffeeTables\\AN0057P Light luxury minimalist italian sintered stone coffee table",
+			"relativePath": "CoffeeTables\\AN0057P Light luxury minimalist italian sintered stone coffee table",
+			"type": "directory",
+			"isSymbolicLink": false,
+			"sizeInBytes": 100503,
+			"size": "100.5 KB",
+			"hash": "106360b7ca99ebf700ffe393a88f1ad1",
+			"children": [{
+				"name": "Tables.png",
+				"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\CoffeeTables\\AN0057P Light luxury minimalist italian sintered stone coffee table\\Tables.png",
+				"relativePath": "CoffeeTables\\AN0057P Light luxury minimalist italian sintered stone coffee table\\Tables.png",
+				"type": "file",
+				"isSymbolicLink": false,
+				"extension": "png",
+				"sizeInBytes": 100503,
+				"size": "100.5 KB",
+				"hash": "519b56b8294d3034d90f96ad87768759"
+			}]
+		}]
+	}, {
+		"name": "DiningTables",
+		"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\DiningTables",
+		"relativePath": "DiningTables",
+		"type": "directory",
+		"isSymbolicLink": false,
+		"sizeInBytes": 458397,
+		"size": "458.4 KB",
+		"hash": "87a4e8f9d4ee99948029038967b71cc5",
+		"children": [{
+			"name": "Industrial factory with metal base marble countertop round ceramic dining table",
+			"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\DiningTables\\Industrial factory with metal base marble countertop round ceramic dining table",
+			"relativePath": "DiningTables\\Industrial factory with metal base marble countertop round ceramic dining table",
+			"type": "directory",
+			"isSymbolicLink": false,
+			"sizeInBytes": 181763,
+			"size": "181.76 KB",
+			"hash": "626188773f5066d54f63edadfa15d3c1",
+			"children": [{
+				"name": "Tables.png",
+				"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\DiningTables\\Industrial factory with metal base marble countertop round ceramic dining table\\Tables.png",
+				"relativePath": "DiningTables\\Industrial factory with metal base marble countertop round ceramic dining table\\Tables.png",
+				"type": "file",
+				"isSymbolicLink": false,
+				"extension": "png",
+				"sizeInBytes": 181763,
+				"size": "181.76 KB",
+				"hash": "52d4c8e772890a71f425c505fd47c1da"
+			}]
+		}, {
+			"name": "IndustrialFactoryWithMetalBaseMarbleCountertopRoundCeramicDiningTable",
+			"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\DiningTables\\IndustrialFactoryWithMetalBaseMarbleCountertopRoundCeramicDiningTable",
+			"relativePath": "DiningTables\\IndustrialFactoryWithMetalBaseMarbleCountertopRoundCeramicDiningTable",
+			"type": "directory",
+			"isSymbolicLink": false,
+			"sizeInBytes": 181763,
+			"size": "181.76 KB",
+			"hash": "100769339dc5f4cad10cf3029eb9800f",
+			"children": [{
+				"name": "Tables.png",
+				"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\DiningTables\\IndustrialFactoryWithMetalBaseMarbleCountertopRoundCeramicDiningTable\\Tables.png",
+				"relativePath": "DiningTables\\IndustrialFactoryWithMetalBaseMarbleCountertopRoundCeramicDiningTable\\Tables.png",
+				"type": "file",
+				"isSymbolicLink": false,
+				"extension": "png",
+				"sizeInBytes": 181763,
+				"size": "181.76 KB",
+				"hash": "52d4c8e772890a71f425c505fd47c1da"
+			}]
+		}, {
+			"name": "Modern contemporary sintered stone table ceramic countertop",
+			"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\DiningTables\\Modern contemporary sintered stone table ceramic countertop",
+			"relativePath": "DiningTables\\Modern contemporary sintered stone table ceramic countertop",
+			"type": "directory",
+			"isSymbolicLink": false,
+			"sizeInBytes": 94871,
+			"size": "94.87 KB",
+			"hash": "794005b62400ff0c8d4ea840a83d37c5",
+			"children": [{
+				"name": "Tables.png",
+				"path": "E:\\Projects\\Digital Envision\\furniture\\furniture\\public\\Images\\DiningTables\\Modern contemporary sintered stone table ceramic countertop\\Tables.png",
+				"relativePath": "DiningTables\\Modern contemporary sintered stone table ceramic countertop\\Tables.png",
+				"type": "file",
+				"isSymbolicLink": false,
+				"extension": "png",
+				"sizeInBytes": 94871,
+				"size": "94.87 KB",
+				"hash": "732eb092cb6a0c29f36494ef0f5603ba"
+			}]
+		}]
+	}]
+}
