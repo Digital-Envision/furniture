@@ -5,7 +5,7 @@ import { BACKGROUND, CHAIR, COFFEE_TABLE, DINING_TABLE } from '../constants';
 const Furniture = ({ currentChairId, currentTableId, currentBackgroundId }) => {
   return (
     <React.Fragment>
-      <div className="Backgrounds">
+      <div className="backgrounds">
         <img
           src={BACKGROUND[currentBackgroundId]}
           alt=""
