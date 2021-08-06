@@ -2,6 +2,7 @@ import map from 'lodash/map';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import React from 'react';
+import '../CSS/VerticalModal.css';
 import { CHAIR, COFFEE_TABLE, DINING_TABLE, MODAL_MODE } from '../constants';
 
 const ShorterNames = (name) => {
@@ -65,8 +66,9 @@ const VerticalModal = ({
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      className="modal-window"
     >
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">{header}</Modal.Title>
       </Modal.Header>
       <Modal.Body>{renderSelectableObjects()}</Modal.Body>

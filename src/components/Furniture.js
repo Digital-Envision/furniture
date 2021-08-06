@@ -18,7 +18,7 @@ const Furniture = ({ currentChairId, currentTableId, currentBackgroundId }) => {
           <React.Fragment>
             <div className="chairs left-side">
               <img
-                src={CHAIR[currentChairId].IMAGES.LEFT}
+                src={CHAIR[currentChairId].IMAGES.LEFTSIDE}
                 alt=""
                 width="100px"
                 height="100px"
@@ -26,7 +26,7 @@ const Furniture = ({ currentChairId, currentTableId, currentBackgroundId }) => {
             </div>
             <div className="chairs center left">
               <img
-                src={CHAIR[currentChairId].IMAGES.CENTER}
+                src={CHAIR[currentChairId].IMAGES.LEFT}
                 alt=""
                 width="100px"
                 height="100px"
@@ -34,7 +34,7 @@ const Furniture = ({ currentChairId, currentTableId, currentBackgroundId }) => {
             </div>
             <div className="chairs center right">
               <img
-                src={CHAIR[currentChairId].IMAGES.CENTER}
+                src={CHAIR[currentChairId].IMAGES.RIGHT}
                 alt=""
                 width="100px"
                 height="100px"
@@ -42,7 +42,7 @@ const Furniture = ({ currentChairId, currentTableId, currentBackgroundId }) => {
             </div>
             <div className="chairs right-side">
               <img
-                src={CHAIR[currentChairId].IMAGES.RIGHT}
+                src={CHAIR[currentChairId].IMAGES.RIGHTSIDE}
                 alt=""
                 width="100px"
                 height="100px"

@@ -1,0 +1,28 @@
+:root {
+  --blur: 5px;
+}
+
+.modal-window .modal-content {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.modal-content button {
+  background: none;
+  border-radius: 5px;
+}
+
+.modal-content button:not(:first-child) {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.modal-content button:hover {
+  background: white;
+  color: black;
+}

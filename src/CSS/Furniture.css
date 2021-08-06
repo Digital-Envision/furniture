@@ -1,12 +1,15 @@
 :root {
-  --center: -15%;
+  --center: -10%;
   --centerSides: 10%;
   --sideTop: 20%;
-  --sideChairs: -35%;
+  --sideChairs: -10%;
   --tableCenter: 39%;
 
   --tableWidth: 325px;
   --tableHeight: 125px;
+
+  --sideIndex: 1;
+  --centerIndex: 0;
 }
 
 .Backgrounds {
@@ -24,16 +27,19 @@
   /* background: white; */
   top: var(--sideTop);
   left: var(--sideChairs);
+  z-index: var(--sideIndex);
 }
 
 .right-side {
   /* background: white; */
   top: var(--sideTop);
   right: var(--sideChairs);
+  z-index: var(--sideIndex);
 }
 
 .center {
   top: var(--center);
+  z-index: var(--centerIndex);
 }
 
 .left {
