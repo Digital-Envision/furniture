@@ -3,10 +3,6 @@ const path = require('path');
 
 const BRANCH = 'gh-pages';
 
-ghPages.publish(
-  path.join(__dirname, './build'),
-  { branch: BRANCH },
-  () => {
-    console.log(`Publish to ${BRANCH} completed`);
-  }
-);
+ghPages.publish(path.join(__dirname, './build'), { branch: BRANCH }, () => {
+  console.log(`Publish to ${BRANCH} completed`);
+});
