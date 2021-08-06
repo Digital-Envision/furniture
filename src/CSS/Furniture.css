@@ -1,32 +1,18 @@
 :root {
-  --center: -15%;
+  --center: -10%;
   --centerSides: 10%;
   --sideTop: 20%;
-  --sideChairs: -35%;
+  --sideChairs: -10%;
   --tableCenter: 39%;
 
   --tableWidth: 325px;
   --tableHeight: 125px;
+
+  --sideIndex: 1;
+  --centerIndex: 0;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  min-width: 100vw;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  position: relative;
-}
-
-.Backgrounds {
+.backgrounds {
   position: absolute;
 }
 
@@ -41,16 +27,19 @@
   /* background: white; */
   top: var(--sideTop);
   left: var(--sideChairs);
+  z-index: var(--sideIndex);
 }
 
 .right-side {
   /* background: white; */
   top: var(--sideTop);
   right: var(--sideChairs);
+  z-index: var(--sideIndex);
 }
 
 .center {
   top: var(--center);
+  z-index: var(--centerIndex);
 }
 
 .left {
