@@ -8,8 +8,13 @@ const ShorterNames = (name) => {
   return name.length > 15 ? name.substring(0, 11) + '...' : name;
 };
 
-const VerticalModal = ({ onHide, header, mode, setCurrentChairId, setCurrentTableId }) => {
-
+const VerticalModal = ({
+  onHide,
+  header,
+  mode,
+  setCurrentChairId,
+  setCurrentTableId,
+}) => {
   const setTable = (id, type) => {
     setCurrentTableId(id, type);
     onHide();
@@ -26,10 +31,7 @@ const VerticalModal = ({ onHide, header, mode, setCurrentChairId, setCurrentTabl
     switch (mode) {
       case MODAL_MODE.CHAIR:
         toReturn = map(CHAIR, (data, id) => (
-          <Button
-            onClick={() => setChair(id)}
-            key={id}
-          >
+          <Button onClick={() => setChair(id)} key={id}>
             {ShorterNames(data.LABEL)}
           </Button>
         ));
@@ -65,13 +67,9 @@ const VerticalModal = ({ onHide, header, mode, setCurrentChairId, setCurrentTabl
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          {header}
-        </Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">{header}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        {renderSelectableObjects()}
-      </Modal.Body>
+      <Modal.Body>{renderSelectableObjects()}</Modal.Body>
       <Modal.Footer>
         <Button onClick={onHide}>Close</Button>
       </Modal.Footer>
