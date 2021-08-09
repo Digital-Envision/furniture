@@ -1,0 +1,32 @@
+:root {
+  --dropDownWidth: 350px;
+  --dropDownYOffset: 20%;
+  --dropDownXOffset: 50px;
+}
+
+.furniture-dropdowns {
+  display: flex;
+  top: var(--dropDownYOffset);
+  z-index: 20;
+  position: absolute;
+}
+
+.furniture-dropdowns select {
+  width: var(--dropDownWidth);
+  font-size: 20px;
+  margin-left: calc(var(--dropDownXOffset) / 2);
+  margin-right: calc(var(--dropDownXOffset) / 2);
+}
+
+.furniture-dropdowns select {
+  margin-left: calc(var(--dropDownXOffset) / 2);
+  margin-right: calc(var(--dropDownXOffset) / 2);
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --dropDownWidth: 120px;
+    --dropDownYOffset: 30%;
+    --dropDownXOffset: 20px;
+  }
+}

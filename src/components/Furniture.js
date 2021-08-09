@@ -6,47 +6,22 @@ const Furniture = ({ currentChairId, currentTableId, currentBackgroundId }) => {
   return (
     <React.Fragment>
       <div className="backgrounds">
-        <img
-          src={BACKGROUND[currentBackgroundId]}
-          alt=""
-          width="650px"
-          height="400px"
-        />
+        <img src={BACKGROUND[currentBackgroundId]} alt="" />
       </div>
       <div className="holder">
         {currentChairId && (
           <React.Fragment>
             <div className="chairs left-side">
-              <img
-                src={CHAIR[currentChairId].IMAGES.LEFTSIDE}
-                alt=""
-                width="100px"
-                height="100px"
-              />
+              <img src={CHAIR[currentChairId].IMAGES.LEFTSIDE} alt="" />
             </div>
             <div className="chairs center left">
-              <img
-                src={CHAIR[currentChairId].IMAGES.LEFT}
-                alt=""
-                width="100px"
-                height="100px"
-              />
+              <img src={CHAIR[currentChairId].IMAGES.LEFT} alt="" />
             </div>
             <div className="chairs center right">
-              <img
-                src={CHAIR[currentChairId].IMAGES.RIGHT}
-                alt=""
-                width="100px"
-                height="100px"
-              />
+              <img src={CHAIR[currentChairId].IMAGES.RIGHT} alt="" />
             </div>
             <div className="chairs right-side">
-              <img
-                src={CHAIR[currentChairId].IMAGES.RIGHTSIDE}
-                alt=""
-                width="100px"
-                height="100px"
-              />
+              <img src={CHAIR[currentChairId].IMAGES.RIGHTSIDE} alt="" />
             </div>
           </React.Fragment>
         )}
