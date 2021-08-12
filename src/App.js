@@ -1,6 +1,6 @@
 import React from 'react';
-import SelectionsMenu from './components/SelectionsMenu';
 import Furniture from './components/Furniture';
+import DropDown from './components/DropDown';
 import './CSS/App.css';
 
 const App = () => {
@@ -21,13 +21,18 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <SelectionsMenu
+        <DropDown
+          currentChairId={currentChairId}
+          currentTableId={currentTableId}
           setCurrentChairId={setCurrentChairId}
           setCurrentTableId={setTableId}
+          currentBackgroundId={currentBackgroundId}
         />
         <Furniture
           currentChairId={currentChairId}
           currentTableId={currentTableId}
+          setCurrentChairId={setCurrentChairId}
+          setCurrentTableId={setTableId}
           currentBackgroundId={currentBackgroundId}
         />
       </header>

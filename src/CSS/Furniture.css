@@ -1,37 +1,50 @@
 :root {
-  --center: -10%;
-  --centerSides: 10%;
-  --sideTop: 20%;
+  --center: -40%;
+  --centerSides: 5%;
+  --sideTop: 0%;
   --sideChairs: -10%;
-  --tableCenter: 39%;
+  --tableCenter: 0%;
 
-  --tableWidth: 325px;
-  --tableHeight: 125px;
+  --tableWidth: 1008px;
+  --tableHeight: 641px;
+
+  --holderWidth: 50vw;
+  --holderHeight: 19vh;
 
   --sideIndex: 1;
   --centerIndex: 0;
+
+  --backgroundWidth: 100vw;
+  --backgroundHeight: 100vh;
+
+  --chairSize: 300px;
 }
 
 .backgrounds {
   position: absolute;
 }
 
+.backgrounds img {
+  width: var(--backgroundWidth);
+  height: var(--backgroundHeight);
+}
+
 .chairs {
-  /* background: red; */
-  width: 100px;
-  height: 100px;
   position: absolute;
 }
 
+.chairs img {
+  width: var(--chairSize);
+  height: var(--chairSize);
+}
+
 .left-side {
-  /* background: white; */
   top: var(--sideTop);
   left: var(--sideChairs);
   z-index: var(--sideIndex);
 }
 
 .right-side {
-  /* background: white; */
   top: var(--sideTop);
   right: var(--sideChairs);
   z-index: var(--sideIndex);
@@ -51,9 +64,22 @@
 }
 
 .tables {
-  /* background: white; */
-  width: calc(var(--tableWidth) * 4);
-  height: calc(var(--tableHeight) * 1.5);
+  max-width: var(--tableWidth);
+  max-height: var(--tableHeight);
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  top: var(--tableCenter);
+}
+
+.holder {
+  width: var(--holderWidth);
+  height: var(--holderHeight);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -61,14 +87,38 @@
   position: relative;
 }
 
-.holder {
-  /* background: black; */
-  width: var(--tableWidth);
-  height: var(--tableHeight);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  top: var(--tableCenter);
+@media screen and (max-width: 1250px) {
+  :root {
+    --center: -5%;
+    --centerSides: 20%;
+    --sideTop: 20%;
+    --sideChairs: -5%;
+    --tableCenter: -5%;
+
+    --tableWidth: 1250px;
+    --tableHeight: 178px;
+
+    --holderWidth: 700px;
+    --holderHeight: 188px;
+
+    --chairSize: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --center: -5%;
+    --centerSides: 20%;
+    --sideTop: 20%;
+    --sideChairs: -5%;
+    --tableCenter: -5%;
+
+    --tableWidth: 1250px;
+    --tableHeight: 178px;
+
+    --holderWidth: 350px;
+    --holderHeight: 133px;
+
+    --chairSize: 100px;
+  }
 }
