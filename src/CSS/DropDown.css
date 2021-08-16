@@ -23,7 +23,15 @@
   margin-right: calc(var(--dropDownXOffset) / 2);
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1250px) {
+  :root {
+    --dropDownWidth: 250px;
+    --dropDownYOffset: 20%;
+    --dropDownXOffset: 20px;
+  }
+}
+
+@media screen and (max-width: 512px) {
   :root {
     --dropDownWidth: 120px;
     --dropDownYOffset: 30%;
