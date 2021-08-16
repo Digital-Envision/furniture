@@ -1,5 +1,6 @@
 import React from 'react';
 import map from 'lodash/map';
+import _ from 'lodash';
 import '../CSS/DropDown.css';
 import { CHAIR, COFFEE_TABLE, DINING_TABLE, MODAL_MODE } from '../constants';
 
@@ -47,12 +48,55 @@ const DropDown = ({
     return toReturn;
   };
 
-  const isCoffee = () => {
-    return !currentTableId || currentBackgroundId === 'COFFEE';
+  const coffeeBackground = currentBackgroundId === 'COFFEE';
+
+  const collectionsToChecks = coffeeBackground ? COFFEE_TABLE : DINING_TABLE;
+
+  const selectedTable = _.find(
+    collectionsToChecks,
+    (data, key) => key === currentTableId
+  );
+
+  const removeTableSelections = selectedTable && (
+    <option value={''}>None</option>
+  );
+
+  const removeChairSelections = currentChairId && (
+    <option value={''}>None</option>
+  );
+
+  const emptySelections = (mode) => {
+    switch (mode) {
+      case 'COFFEE':
+        return (
+          coffeeBackground &&
+          !selectedTable &&
+          !currentTableId && <option selected>Select a Coffee Table</option>
+        );
+      case 'DINING':
+        return (
+          !coffeeBackground &&
+          !selectedTable &&
+          !currentTableId && <option selected>Select a Dining Table</option>
+        );
+      default:
+        return null;
+    }
   };
 
-  const isDining = () => {
-    return !currentTableId || currentBackgroundId === 'DINING';
+  const selectTableOptions = (mode) => {
+    switch (mode) {
+      case 'COFFEE':
+        return (
+          !coffeeBackground && <option selected>Select a Coffee Table</option>
+        );
+      case 'DINING':
+        return (
+          coffeeBackground && <option selected>Select a Dining Table</option>
+        );
+      default:
+        return null;
+    }
   };
 
   return (
@@ -64,20 +108,25 @@ const DropDown = ({
         >
           {!currentChairId && <option selected>Select a Chair</option>}
           {renderSelectableObjects(MODAL_MODE.CHAIR)}
+          {removeChairSelections}
         </select>
         <select
           className="custom-select"
           onChange={(e) => setCurrentTableId(e.target.value, 'COFFEE')}
         >
-          {isDining() && <option selected>Select a Coffee Table</option>}
+          {emptySelections('COFFEE')}
+          {selectTableOptions('COFFEE')}
           {renderSelectableObjects(MODAL_MODE.COFFEE_TABLE)}
+          {removeTableSelections}
         </select>
         <select
           className="custom-select"
           onChange={(e) => setCurrentTableId(e.target.value, 'DINING')}
         >
-          {isCoffee() && <option selected>Select a Dining Table</option>}
+          {emptySelections('DINING')}
+          {selectTableOptions('DINING')}
           {renderSelectableObjects(MODAL_MODE.DINING_TABLE)}
+          {removeTableSelections}
         </select>
       </div>
     </React.Fragment>

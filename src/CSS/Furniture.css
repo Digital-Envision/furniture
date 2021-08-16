@@ -1,9 +1,9 @@
 :root {
-  --center: 5%;
-  --centerSides: 20%;
-  --sideTop: 25%;
+  --center: 0px;
+  --centerSides: 0px;
+  --sideTop: 40%;
   --sideChairs: -2.5%;
-  --tableCenter: 5%;
+  --tableCenter: 0%;
 
   --tableWidth: 1008px;
   --tableHeight: 641px;
@@ -19,10 +19,10 @@
 
   --chairSize: 275px;
 
-  --holderOffset: 20%;
-  --holderGrounding: 20%;
+  --holderOffset: 0px;
+  --holderGrounding: -70px;
 
-  --holderKitchenGround: 15%;
+  --holderKitchenGround: 75px;
 }
 
 .backgrounds {
@@ -61,11 +61,11 @@
 }
 
 .left {
-  left: var(--centerSides);
+  left: calc(20% - var(--centerSides));
 }
 
 .right {
-  right: var(--centerSides);
+  right: calc(20% - var(--centerSides));
 }
 
 .tables {
@@ -90,24 +90,23 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: var(--holderGrounding);
+  bottom: calc(20% - var(--holderGrounding));
 }
 
 .holder-offset {
-  right: var(--holderOffset);
+  right: calc(20% - var(--holderOffset));
 }
 
 .holder-kitchen {
-  bottom: var(--holderKitchenGround);
+  bottom: calc(15% + var(--holderKitchenGround));
 }
 
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 1650px) {
   :root {
-    --center: -5%;
-    --centerSides: 20%;
-    --sideTop: 20%;
+    --center: 10px;
+    --centerSides: 20px;
+    --sideTop: 40%;
     --sideChairs: -5%;
-    --tableCenter: -5%;
 
     --tableWidth: 1250px;
     --tableHeight: 178px;
@@ -116,16 +115,68 @@
     --holderHeight: 188px;
 
     --chairSize: 200px;
+
+    --holderOffset: 175px;
+    --holderGrounding: 0px;
+
+    --holderKitchenGround: 0px;
+  }
+
+  .holder-offset {
+    right: auto;
+    left: calc(20% + var(--holderOffset));
   }
 }
 
-@media screen and (max-width: 512px) {
+@media screen and (max-width: 1444px) {
+  .holder-offset {
+    left: calc(18% + var(--holderOffset));
+  }
+}
+
+@media screen and (max-width: 1024px) {
   :root {
-    --center: -5%;
-    --centerSides: 20%;
-    --sideTop: 20%;
-    --sideChairs: -5%;
-    --tableCenter: -5%;
+    --chairSize: 175px;
+
+    --center: 10px;
+    --centerSides: 0px;
+    --sideTop: 30%;
+    --sideChairs: -2.5%;
+
+    --tableCenter: 0%;
+  }
+
+  .holder-offset {
+    left: calc(10% + var(--holderOffset));
+  }
+}
+
+@media screen and (max-width: 980px) {
+  :root {
+    --chairSize: 150px;
+
+    --center: 15px;
+    --centerSides: -15px;
+    --sideTop: 30%;
+    --sideChairs: -2%;
+
+    --tableCenter: -10%;
+
+    --holderWidth: 560px;
+    --holderHeight: 188px;
+
+    --holderKitchenGround: -30px;
+  }
+
+  .holder-offset {
+    left: calc(12% + var(--holderOffset));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --centerSides: 10px;
+    --sideChairs: -7.5%;
 
     --tableWidth: 1250px;
     --tableHeight: 178px;
@@ -133,6 +184,36 @@
     --holderWidth: 350px;
     --holderHeight: 133px;
 
-    --chairSize: 100px;
+    --chairSize: 125px;
+
+    --holderOffset: 65px;
+    --holderGrounding: 50px;
+
+    --holderKitchenGround: 0px;
+  }
+
+  .holder-offset {
+    left: calc(20% + var(--holderOffset));
+  }
+}
+
+@media screen and (max-width: 350px) {
+  :root {
+    --chairSize: 40px;
+    --centerSides: 0px;
+    --sideChairs: 0;
+    --sideTop: 40%;
+
+    --holderWidth: 195px;
+    --holderHeight: 55px;
+
+    --tableWidth: 175px;
+    --tableHeight: 80px;
+
+    --holderGrounding: 5px;
+
+    --holderOffset: 10%;
+
+    --holderKitchenGround: -3px;
   }
 }

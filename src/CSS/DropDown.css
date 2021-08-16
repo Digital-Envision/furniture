@@ -1,7 +1,10 @@
 :root {
   --dropDownWidth: 350px;
+  --dropDownHeight: 30px;
   --dropDownYOffset: 20%;
   --dropDownXOffset: 50px;
+
+  --fontSize: 20px;
 }
 
 .furniture-dropdowns {
@@ -13,7 +16,8 @@
 
 .furniture-dropdowns select {
   width: var(--dropDownWidth);
-  font-size: 20px;
+  height: var(--dropDownHeight);
+  font-size: var(--fontSize);
   margin-left: calc(var(--dropDownXOffset) / 2);
   margin-right: calc(var(--dropDownXOffset) / 2);
 }
@@ -28,6 +32,18 @@
     --dropDownWidth: 250px;
     --dropDownYOffset: 20%;
     --dropDownXOffset: 20px;
+
+    --fontSize: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --dropDownWidth: 200px;
+    --dropDownYOffset: 30%;
+    --dropDownXOffset: 20px;
+
+    --fontSize: 10px;
   }
 }
 
@@ -36,5 +52,12 @@
     --dropDownWidth: 120px;
     --dropDownYOffset: 30%;
     --dropDownXOffset: 20px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  :root {
+    --dropDownWidth: 70px;
+    --dropDownHeight: 20px;
   }
 }
