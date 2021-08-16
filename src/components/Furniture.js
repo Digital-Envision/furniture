@@ -2,13 +2,19 @@ import React from 'react';
 import '../CSS/Furniture.css';
 import { BACKGROUND, CHAIR, COFFEE_TABLE, DINING_TABLE } from '../constants';
 
+const HolderOffset = (backgroundId) => {
+  if (backgroundId === 'DINING') return 'holder-offset holder-kitchen';
+
+  return '';
+};
+
 const Furniture = ({ currentChairId, currentTableId, currentBackgroundId }) => {
   return (
     <React.Fragment>
       <div className="backgrounds">
         <img src={BACKGROUND[currentBackgroundId]} alt="" />
       </div>
-      <div className="holder">
+      <div className={`holder ${HolderOffset(currentBackgroundId)}`}>
         {currentChairId && (
           <React.Fragment>
             <div className="chairs left-side">
