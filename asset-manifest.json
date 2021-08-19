@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/furniture/static/css/main.0eff1756.chunk.css",
-    "main.js": "/furniture/static/js/main.9e83fb63.chunk.js",
-    "main.js.map": "/furniture/static/js/main.9e83fb63.chunk.js.map",
+    "main.js": "/furniture/static/js/main.986f3622.chunk.js",
+    "main.js.map": "/furniture/static/js/main.986f3622.chunk.js.map",
     "runtime-main.js": "/furniture/static/js/runtime-main.13400fa1.js",
     "runtime-main.js.map": "/furniture/static/js/runtime-main.13400fa1.js.map",
     "static/css/2.4be38407.chunk.css": "/furniture/static/css/2.4be38407.chunk.css",
@@ -14,7 +14,7 @@
     "static/css/2.4be38407.chunk.css.map": "/furniture/static/css/2.4be38407.chunk.css.map",
     "static/css/main.0eff1756.chunk.css.map": "/furniture/static/css/main.0eff1756.chunk.css.map",
     "static/js/2.472a99d7.chunk.js.LICENSE.txt": "/furniture/static/js/2.472a99d7.chunk.js.LICENSE.txt",
-    "static/media/Bases.7d64b1bc.jpeg": "/furniture/static/media/Bases.7d64b1bc.jpeg",
+    "static/media/Bases.6e81f115.jpeg": "/furniture/static/media/Bases.6e81f115.jpeg",
     "static/media/Bases.c21f28c9.jpeg": "/furniture/static/media/Bases.c21f28c9.jpeg",
     "static/media/Left.65da7677.png": "/furniture/static/media/Left.65da7677.png",
     "static/media/Left.870bec84.png": "/furniture/static/media/Left.870bec84.png",
@@ -59,6 +59,6 @@
     "static/css/2.4be38407.chunk.css",
     "static/js/2.472a99d7.chunk.js",
     "static/css/main.0eff1756.chunk.css",
-    "static/js/main.9e83fb63.chunk.js"
+    "static/js/main.986f3622.chunk.js"
   ]
 }
